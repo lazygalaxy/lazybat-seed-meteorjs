@@ -13,7 +13,7 @@ competitions.forEach(function(entry) {
       admins: fields[5].split(':')
     }
 
-    Meteor.call('competitions.upsert', upsert, (error, competitionId) => {
+    Meteor.call('competitions.upsert', upsert, (error, response) => {
       if (error) {
         console.error(error);
       } else {
@@ -24,25 +24,25 @@ competitions.forEach(function(entry) {
 });
 
 //load the questions
-// let questions = Assets.getText('questions.csv').split(/\r\n|\n/);
-// questions.forEach(function(entry) {
-//   if (entry) {
-//     let fields = entry.split(';');
-//
-//     let upsert = {
-//       _id: fields[0],
-//       competitionId: fields[1],
-//       description: fields[2],
-//       type: fields[3],
-//       options: fields[4]
-//     }
-//
-//     upsertQuestion.call(upsert, (error, response) => {
-//       if (error) {
-//         console.error(error);
-//       } else {
-//         console.info('question upserted: ' + JSON.stringify(upsert));
-//       }
-//     });
-//   }
-// });
+let questions = Assets.getText('questions.csv').split(/\r\n|\n/);
+questions.forEach(function(entry) {
+  if (entry) {
+    let fields = entry.split(';');
+
+    let upsert = {
+      _id: fields[0],
+      competitionId: fields[1],
+      description: fields[2],
+      type: fields[3],
+      options: fields[4]
+    }
+
+    Meteor.call('questions.upsert', upsert, (error, response) => {
+      if (error) {
+        console.error(error);
+      } else {
+        console.info('question upserted: ' + JSON.stringify(upsert));
+      }
+    })
+  }
+});
