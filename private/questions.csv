@@ -1,0 +1,5 @@
+SECHSELAEUTEN2017_Q1;SECHSELAEUTEN2017;How long will it take for the head to blow up?;DURATION;0:3600
+EXAMPLE_Q1;EXAMPLE;How many continents are there?;NUMBER;0:300
+EXAMPLE_Q2;EXAMPLE;Is Athens the capital of Greece?;OPTIONS;True:False
+EXAMPLE_Q3;EXAMPLE;What is the world record for a Marathon?;DURATION;0:99999
+EXAMPLE_Q4;EXAMPLE;What is the article of Hund?;OPTIONS;Der:Die:Das
