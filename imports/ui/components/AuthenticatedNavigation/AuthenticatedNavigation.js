@@ -1,14 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { LinkContainer } from 'react-router-bootstrap';
-import { Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
-import { Meteor } from 'meteor/meteor';
+import {LinkContainer} from 'react-router-bootstrap';
+import {Nav, NavItem, NavDropdown, MenuItem} from 'react-bootstrap';
+import {Meteor} from 'meteor/meteor';
 
-const AuthenticatedNavigation = ({ name }) => (
+const AuthenticatedNavigation = ({name}) => (
   <div>
     <Nav>
       <LinkContainer to="/documents">
-        <NavItem eventKey={1} href="/documents">Documents</NavItem>
+        <NavItem eventKey={1.1} href="/documents">Documents</NavItem>
+      </LinkContainer>
+      <LinkContainer to="/competitions">
+        <NavItem eventKey={1.2} href="/competitions">Competitions</NavItem>
       </LinkContainer>
     </Nav>
     <Nav pullRight>
@@ -16,7 +19,7 @@ const AuthenticatedNavigation = ({ name }) => (
         <LinkContainer to="/profile">
           <NavItem eventKey={2.1} href="/profile">Profile</NavItem>
         </LinkContainer>
-        <MenuItem divider />
+        <MenuItem divider/>
         <MenuItem eventKey={2.2} onClick={() => Meteor.logout()}>Logout</MenuItem>
       </NavDropdown>
     </Nav>
@@ -24,7 +27,7 @@ const AuthenticatedNavigation = ({ name }) => (
 );
 
 AuthenticatedNavigation.propTypes = {
-  name: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired
 };
 
 export default AuthenticatedNavigation;

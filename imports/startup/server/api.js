@@ -1,6 +1,9 @@
 import '../../api/Documents/methods';
 import '../../api/Documents/server/publications';
 
+import '../../api/Answers/methods';
+import '../../api/Answers/server/publications';
+
 import '../../api/Competitions/methods';
 import '../../api/Competitions/server/publications';
 
