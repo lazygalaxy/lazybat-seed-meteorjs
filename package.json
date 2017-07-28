@@ -1,8 +1,12 @@
 {
-  "name": "pup",
+  "name": "lazybat",
   "private": true,
+  "version": "1.0.0",
+  "description": "Meteor boilerplate project",
   "scripts": {
     "start": "meteor --settings settings-development.json",
+    "staging": "DEPLOY_HOSTNAME=eu-west-1.galaxy-deploy.meteor.com meteor deploy lazybat.eu.meteorapp.com --settings settings-staging.json",
+    "production": "DEPLOY_HOSTNAME=eu-west-1.galaxy-deploy.meteor.com meteor deploy www.lazybat.com --settings settings-production.json",
     "test": "jest"
   },
   "dependencies": {
